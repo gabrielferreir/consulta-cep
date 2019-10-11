@@ -1,0 +1,42 @@
+.header {
+  background-color: #EEE;
+  padding: 32px;
+  height: 150px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  &__title {
+    font-size: 18px;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.68);
+  }
+
+  &__search-button {
+    outline: none;
+    border: none;
+    background-color: #51a8e1;
+    padding: 0 16px;
+    height: 32px;
+    color: #FFF;
+    font-weight: 500;
+    border-radius: 2px;
+  }
+
+  &__label-field {
+    font-size: 18px;
+    color: rgba(0, 0, 0, .32);
+    font-weight: 500;
+    margin-right: 20px;
+  }
+
+  &__field {
+    height: 32px;
+    outline: none;
+    border: 1px solid #AAA;
+    border-radius: 2px;
+    margin-right: 16px;
+    padding: 0 8px;
+  }
+
+}
