@@ -1,3 +1,5 @@
+@import "../../mediaQuery";
+
 .wrapper-map {
   border: 2px solid #CCC;
   padding: 32px;
@@ -13,7 +15,7 @@
 
   &__title {
     font-size: 28px;
-    color: rgba(0,0,0,.87);
+    color: rgba(0, 0, 0, .87);
     font-weight: 600;
   }
 
@@ -22,5 +24,18 @@
     color: rgba(0, 0, 0, 0.87);
     font-weight: 400;
     margin: 8px 0;
+  }
+
+  &__map {
+    width: 100%;
+    height: 600px;
+  }
+}
+
+@include for-phone {
+  .wrapper-map {
+    &__map {
+      height: 300px;
+    }
   }
 }

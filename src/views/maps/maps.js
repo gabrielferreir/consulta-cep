@@ -22,7 +22,7 @@ class Maps extends React.Component {
                 <p className="wrapper-map__info-address">{address.bairro}</p>
                 <p className="wrapper-map__info-address">{address.localidade} - {address.uf}</p>
                 <p className="wrapper-map__info-address">{address.cep}</p>
-                <div style={{height: '600px', width: '100%'}}>
+                <div className="wrapper-map__map">
                     <GoogleMapReact
                         bootstrapURLKeys={{key: process.env.REACT_APP_KEY}}
                         defaultCenter={{

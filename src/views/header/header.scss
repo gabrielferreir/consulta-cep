@@ -1,3 +1,5 @@
+@import "../../mediaQuery";
+
 .header {
   background-color: #EEE;
   padding: 32px;
@@ -18,6 +20,7 @@
 
   &__wrapper-field {
     padding: 8px 0;
+    width: 100%;
   }
 
   &__search-button {
@@ -53,4 +56,26 @@
     margin: 8px;
   }
 
+}
+
+@include for-phone {
+  .header {
+    padding: 16px;
+
+    &__wrapper-field {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    &__field {
+      width: 100%;
+      margin-right: 0;
+    }
+
+    &__search-button {
+      margin-top: 8px;
+      width: 100%;
+    }
+
+  }
 }
