@@ -84,3 +84,17 @@ it('Deve atualizar o valor do CEP', () => {
         cepValue: cep
     });
 });
+
+it('Deve retornar o estado inicial', () => {
+    const cepRequest = {type: 'default'};
+
+    const INITIAL_STATE = {
+        isLoading: false,
+        address: null,
+        error: null,
+        cepValue: '',
+        opened: false
+    };
+
+    expect(reducer(undefined, cepRequest)).toEqual(INITIAL_STATE);
+});
