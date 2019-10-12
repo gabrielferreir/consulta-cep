@@ -27,3 +27,60 @@ it('Deve alterar o estado quando houver uma falha na busca', () => {
         isLoading: false
     });
 });
+
+it('Deve alterar o estado quando houver sucesso na busca', () => {
+
+    const address = {
+        "cep": "14402-336",
+        "logradouro": "Rua Francisco Miglioranza",
+        "complemento": "",
+        "bairro": "Jardim Palestina",
+        "localidade": "Franca",
+        "uf": "SP",
+        "unidade": "",
+        "ibge": "3516200",
+        "gia": "3104",
+        "lat": -20.5353875,
+        "lng": -47.3588774
+    };
+    const cepRequest = {
+        type: types.CEP_SUCCESS,
+        payload: {
+            address
+        }
+    };
+
+    expect(reducer({}, cepRequest)).toEqual({
+        address: address,
+        isLoading: false,
+        opened: true
+    });
+});
+
+it('Deve limpar o estado', () => {
+    const cepRequest = {
+        type: types.CLEAR
+    };
+
+    expect(reducer({}, cepRequest)).toEqual({
+        isLoading: false,
+        address: null,
+        error: null,
+        cepValue: '',
+        opened: false
+    });
+});
+
+it('Deve atualizar o valor do CEP', () => {
+    const cep = '14402-336';
+    const cepRequest = {
+        type: types.UPDATE_CEP,
+        payload: {
+            newCep: cep
+        }
+    };
+
+    expect(reducer({}, cepRequest)).toEqual({
+        cepValue: cep
+    });
+});
