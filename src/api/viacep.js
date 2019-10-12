@@ -3,7 +3,7 @@ import {InvalidCodeZip, NotFoundCodeZip} from "../utils/excepitons";
 
 export const search = async cep => {
     try {
-        if (!cep || cep.length !== 8)
+        if (!cep || cep.length !== 9)
             throw new InvalidCodeZip('Digite um CEP válido');
 
         const response = await axios.get(`https://viacep.com.br/ws/${cep}/json/`,

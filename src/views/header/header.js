@@ -1,5 +1,5 @@
 import React from 'react';
-import {cepRequest, updateCpf} from "../../actions/mainActions";
+import {cepRequest, updateCep} from "../../actions/mainActions";
 import {connect} from "react-redux";
 import './header.scss';
 
@@ -36,7 +36,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = dispatch => ({
     cepRequest: cep => dispatch(cepRequest(cep)),
-    updateCep: el => dispatch(updateCpf(el.target.value))
+    updateCep: el => dispatch(updateCep(el.target.value))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Header);
