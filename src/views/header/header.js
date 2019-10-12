@@ -16,6 +16,7 @@ class Header extends React.Component {
                 <div className="header__wrapper-field">
                     <label className="header__label-field">CEP</label>
                     <input type="text" placeholder="02050-010" value={cepValue} onChange={updateCep}
+                           onKeyDown={(event) => event.keyCode === 13 && cepRequest(cepValue)}
                            className="header__field"/>
                     <button onClick={() => cepRequest(cepValue)} className="header__search-button">Buscar
                     </button>
