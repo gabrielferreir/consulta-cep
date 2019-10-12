@@ -1,7 +1,7 @@
 import types from './actionsTypes';
 import * as viacep from '../api/viacep'
 import * as geocoding from '../api/geocoding'
-import maskCep from "../utils/maskCep";
+import maskCep from "../utils/mask-cep";
 
 export const cepRequest = cep => async dispatch => {
 
