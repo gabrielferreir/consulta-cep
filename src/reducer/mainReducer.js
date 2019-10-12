@@ -22,6 +22,7 @@ const reducer = (state = INITIAL_STATE, action) => {
         case types.CLEAR:
             return INITIAL_STATE;
         default:
+            return state;
     }
 };
 export default reducer;
