@@ -6,8 +6,13 @@ function NotFoundCodeZip(message) {
     this.message = message;
 }
 
-InvalidCodeZip.prototype = Error;
-NotFoundCodeZip.prototype = Error;
+InvalidCodeZip.prototype = Object.create(Error.prototype);
+InvalidCodeZip.prototype.name = "InvalidCodeZip";
+InvalidCodeZip.prototype.constructor = InvalidCodeZip;
+
+NotFoundCodeZip.prototype = Object.create(Error.prototype);
+NotFoundCodeZip.prototype.name = "NotFoundCodeZip";
+NotFoundCodeZip.prototype.constructor = NotFoundCodeZip;
 
 export {
     InvalidCodeZip,
