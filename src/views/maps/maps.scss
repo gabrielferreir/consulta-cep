@@ -1,0 +1,26 @@
+.wrapper-map {
+  border: 2px solid #CCC;
+  padding: 32px;
+  margin: 8px;
+  position: relative;
+
+  &__clear {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    cursor: pointer;
+  }
+
+  &__title {
+    font-size: 28px;
+    color: rgba(0,0,0,.87);
+    font-weight: 600;
+  }
+
+  &__info-address {
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.87);
+    font-weight: 400;
+    margin: 8px 0;
+  }
+}

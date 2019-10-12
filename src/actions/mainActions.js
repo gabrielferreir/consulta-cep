@@ -1,36 +1,31 @@
 import types from './actionsTypes';
-import axios from 'axios';
+import * as viacep from '../api/viacep'
+import * as geocoding from '../api/geocoding'
 
 export const cepRequest = cep => async dispatch => {
 
     dispatch({type: types.CEP_REQUEST});
 
     try {
-        const response = await axios.get(`https://viacep.com.br/ws/${cep}/json/`,
-            {
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            });
+        const address = await viacep.search(cep);
 
-        const mapLatLong = await axios.get(`https://maps.googleapis.com/maps/api/geocode/json?address=${cep}&key=${process.env.REACT_APP_KEY}`)
+        const latLng = await geocoding.search(cep);
 
         dispatch({
             type: types.CEP_SUCCESS,
             payload: {
                 address: {
-                    ...response.data,
-                    ...mapLatLong.data.results[0].geometry.location
+                    ...address,
+                    ...latLng
                 }
             }
         });
 
     } catch (e) {
-        console.log('AEEE');
         dispatch({
             type: types.CEP_FAILURE,
             payload: {
-                message: 'Tivemos um problema tente novamente mais tarde'
+                message: e.message
             }
         });
     }
@@ -44,4 +39,8 @@ export const updateCpf = value => async dispatch => {
             newCep: value
         }
     });
+};
+
+export const clear = () => async dispatch => {
+    dispatch({type: types.CLEAR});
 };

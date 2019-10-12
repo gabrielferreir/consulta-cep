@@ -1,24 +1,26 @@
 import React from 'react';
 import {connect} from "react-redux";
+import {clear} from "../../actions/mainActions";
 import GoogleMapReact from 'google-map-react';
-import './header.scss';
+import './maps.scss';
 
-const AnyReactComponent = () => <img src="icon-location.svg" />;
+const Icon = () => <img alt="location" src="icon-location.svg"/>;
 
 class Maps extends React.Component {
 
     render() {
-        const {opened, address} = this.props;
+        const {opened, address, clear} = this.props;
 
-        return (opened && <section style={{
-            border: '2px solid #CCC',
-            padding: '32px',
-            margin: '8px'
-        }}>
-            <h1>{address.logradouro}</h1>
-            <h1>{address.bairro}</h1>
-            <h3>{address.localidade} - {address.uf}</h3>
-            <h4>{address.cep}</h4>
+        return (opened && <section className="wrapper-map">
+
+            <div className="wrapper-map__clear" onClick={clear}>
+                <i className="material-icons">clear</i>
+            </div>
+
+            <h1 className="wrapper-map__title">{address.logradouro}</h1>
+            <p className="wrapper-map__info-address">{address.bairro}</p>
+            <p className="wrapper-map__info-address">{address.localidade} - {address.uf}</p>
+            <p className="wrapper-map__info-address">{address.cep}</p>
             <div style={{height: '600px', width: '100%'}}>
                 <GoogleMapReact
                     bootstrapURLKeys={{key: process.env.REACT_APP_KEY}}
@@ -28,7 +30,7 @@ class Maps extends React.Component {
                     }}
                     defaultZoom={18}
                 >
-                    <AnyReactComponent
+                    <Icon
                         lat={address.lat}
                         lng={address.lng}
                     />
@@ -43,6 +45,8 @@ const mapStateToProps = (state) => {
     return mainReducer;
 };
 
-const mapDispatchToProps = dispatch => ({});
+const mapDispatchToProps = dispatch => ({
+    clear: () => dispatch(clear())
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(Maps);
