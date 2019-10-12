@@ -1,12 +1,11 @@
 import types from './actionsTypes';
 import axios from 'axios';
 
-export const cepRequest = (cep) => async dispatch => {
+export const cepRequest = cep => async dispatch => {
 
     dispatch({type: types.CEP_REQUEST});
 
     try {
-        console.log('AQUI');
         const response = await axios.get(`https://viacep.com.br/ws/${cep}/json/`,
             {
                 headers: {
@@ -14,11 +13,15 @@ export const cepRequest = (cep) => async dispatch => {
                 }
             });
 
-        console.log('AOOO', response);
+        const mapLatLong = await axios.get(`https://maps.googleapis.com/maps/api/geocode/json?address=${cep}&key=${process.env.REACT_APP_KEY}`)
+
         dispatch({
             type: types.CEP_SUCCESS,
             payload: {
-                cep: '14402-336'
+                address: {
+                    ...response.data,
+                    ...mapLatLong.data.results[0].geometry.location
+                }
             }
         });
 
@@ -32,4 +35,13 @@ export const cepRequest = (cep) => async dispatch => {
         });
     }
 
+};
+
+export const updateCpf = value => async dispatch => {
+    dispatch({
+        type: types.UPDATE_CEP,
+        payload: {
+            newCep: value
+        }
+    });
 };
