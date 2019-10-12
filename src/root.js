@@ -1,5 +1,4 @@
 import React, {Component} from 'react'
-import PropTypes from 'prop-types'
 
 import {createStore, applyMiddleware} from 'redux';
 import {Provider} from 'react-redux';
@@ -23,7 +22,3 @@ export default class Root extends Component {
     }
 
 }
-
-Root.propTypes = {
-    store: PropTypes.object.isRequired
-};

@@ -11,7 +11,7 @@ const INITIAL_STATE = {
 const reducer = (state = INITIAL_STATE, action) => {
     switch (action.type) {
         case types.CEP_REQUEST:
-            return {...state, isLoading: true, address: null, opened: false};
+            return {...state, isLoading: true, address: null, opened: false, error: null};
         case types.CEP_SUCCESS:
             return {...state, isLoading: false, address: action.payload.address, opened: true};
         case  types.CEP_FAILURE:
