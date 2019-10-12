@@ -1,4 +1,5 @@
 import types from '../actions/actionsTypes';
+import maskCep from "../utils/mask-cep";
 
 const INITIAL_STATE = {
     isLoading: false,
@@ -17,7 +18,7 @@ const reducer = (state = INITIAL_STATE, action) => {
         case  types.CEP_FAILURE:
             return {...state, isLoading: false, error: action.payload.message};
         case types.UPDATE_CEP:
-            return {...state, cepValue: action.payload.newCep};
+            return {...state, cepValue: maskCep(action.payload.newCep)};
         case types.CLEAR:
             return INITIAL_STATE;
         default:
