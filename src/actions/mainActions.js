@@ -1,7 +1,6 @@
 import types from './actionsTypes';
 import * as viacep from '../api/viacep'
 import * as geocoding from '../api/geocoding'
-import maskCep from "../utils/mask-cep";
 
 export const cepRequest = cep => async dispatch => {
 
@@ -37,7 +36,7 @@ export const updateCep = value => async dispatch => {
     dispatch({
         type: types.UPDATE_CEP,
         payload: {
-            newCep: maskCep(value)
+            newCep: value
         }
     });
 };
