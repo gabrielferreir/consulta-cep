@@ -1,0 +1,146 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Deve renderizar a mensagem de loading 1`] = `
+<div
+  style={
+    Object {
+      "padding": "16px",
+    }
+  }
+>
+  <p>
+    Carregando...
+  </p>
+</div>
+`;
+
+exports[`Deve renderizar com o mapa 1`] = `
+<section
+  className="wrapper-map"
+>
+  <div
+    className="wrapper-map__clear"
+  >
+    <i
+      className="material-icons"
+    >
+      clear
+    </i>
+  </div>
+  <h1
+    className="wrapper-map__title"
+  >
+    Rua Francisco Miglioranza
+  </h1>
+  <p
+    className="wrapper-map__info-address"
+  >
+    Jardim Palestina
+  </p>
+  <p
+    className="wrapper-map__info-address"
+  >
+    Franca
+     - 
+    SP
+  </p>
+  <p
+    className="wrapper-map__info-address"
+  >
+    14402-336
+  </p>
+  <div
+    className="wrapper-map__map"
+  >
+    <GoogleMap
+      bootstrapURLKeys={
+        Object {
+          "key": "teste123",
+        }
+      }
+      debounced={true}
+      defaultCenter={
+        Object {
+          "lat": -20.5353875,
+          "lng": -47.3588774,
+        }
+      }
+      defaultZoom={18}
+      distanceToMouse={[Function]}
+      googleMapLoader={[Function]}
+      heatmap={Object {}}
+      heatmapLibrary={false}
+      hoverDistance={30}
+      layerTypes={Array []}
+      options={[Function]}
+      shouldUnregisterMapOnUnmount={true}
+      style={
+        Object {
+          "height": "100%",
+          "margin": 0,
+          "padding": 0,
+          "position": "relative",
+          "width": "100%",
+        }
+      }
+      yesIWantToUseGoogleMapApiInternals={false}
+    >
+      <Icon
+        lat={-20.5353875}
+        lng={-47.3588774}
+      />
+    </GoogleMap>
+  </div>
+</section>
+`;
+
+exports[`Deve renderizar com o mapa 2`] = `<div />`;
+
+exports[`Deve renderizar o icone 1`] = `
+<img
+  alt="location"
+  src="icon-location.svg"
+/>
+`;
+
+exports[`Deve renderizar o mapa 1`] = `
+<ContextProvider
+  value={null}
+>
+  <Maps
+    clear={[Function]}
+    store={
+      Object {
+        "clearActions": [Function],
+        "dispatch": [Function],
+        "getActions": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      }
+    }
+  />
+</ContextProvider>
+`;
+
+exports[`Deve renderizar o mapa storie 1`] = `
+<ContextProvider
+  value={null}
+>
+  <Maps
+    clear={[Function]}
+    store={
+      Object {
+        "clearActions": [Function],
+        "dispatch": [Function],
+        "getActions": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+      }
+    }
+  />
+</ContextProvider>
+`;
+
+exports[`Deve renderizar vazio 1`] = `<div />`;

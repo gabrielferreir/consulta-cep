@@ -4,9 +4,9 @@ import {clear} from "../../actions/mainActions";
 import GoogleMapReact from 'google-map-react';
 import './maps.scss';
 
-const Icon = () => <img alt="location" src="icon-location.svg"/>;
+export const Icon = () => <img alt="location" src="icon-location.svg"/>;
 
-class Maps extends React.Component {
+export class Maps extends React.Component {
 
     render() {
         const {opened, isLoading, address, clear} = this.props;
@@ -38,11 +38,12 @@ class Maps extends React.Component {
                     </GoogleMapReact>
                 </div>
             </section>;
-        if (!opened && isLoading)
+        else if (!opened && isLoading)
             return <div style={{padding: '16px'}}>
                 <p>Carregando...</p>
             </div>;
-        return <div/>;
+        else
+            return <div/>;
     };
 }
 
@@ -51,8 +52,4 @@ const mapStateToProps = (state) => {
     return mainReducer;
 };
 
-const mapDispatchToProps = dispatch => ({
-    clear: () => dispatch(clear())
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(Maps);
+export default connect(mapStateToProps, {clear})(Maps);
