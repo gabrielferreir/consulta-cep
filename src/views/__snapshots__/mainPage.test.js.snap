@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Deve renderizar a pagina principal 1`] = `
+<main
+  className="main"
+>
+  <Connect(Header) />
+  <Connect(Maps) />
+</main>
+`;
