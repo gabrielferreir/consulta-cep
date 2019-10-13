@@ -94,33 +94,11 @@ exports[`Deve renderizar com o mapa 1`] = `
 </section>
 `;
 
-exports[`Deve renderizar com o mapa 2`] = `<div />`;
-
 exports[`Deve renderizar o icone 1`] = `
 <img
   alt="location"
   src="icon-location.svg"
 />
-`;
-
-exports[`Deve renderizar o mapa 1`] = `
-<ContextProvider
-  value={null}
->
-  <Maps
-    clear={[Function]}
-    store={
-      Object {
-        "clearActions": [Function],
-        "dispatch": [Function],
-        "getActions": [Function],
-        "getState": [Function],
-        "replaceReducer": [Function],
-        "subscribe": [Function],
-      }
-    }
-  />
-</ContextProvider>
 `;
 
 exports[`Deve renderizar o mapa storie 1`] = `

@@ -1,47 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Deve chamar a função que busca o endereço ao clicar no botão 1`] = `
-<header
-  className="header"
->
-  <div
-    className="header__wrapper-title"
-  >
-    <h4
-      className="header__title"
-    >
-      Consultar
-    </h4>
-  </div>
-  <div
-    className="header__wrapper-field"
-  >
-    <label
-      className="header__label-field"
-    >
-      CEP
-    </label>
-    <input
-      className="header__field"
-      onKeyDown={[Function]}
-      placeholder="02050-010"
-      type="text"
-    />
-    <button
-      className="header__search-button"
-      onClick={[Function]}
-    >
-      Buscar
-    </button>
-  </div>
-  <span
-    className="header__error"
-  >
-    Tivemos um problema, tente novamente mais tarde
-  </span>
-</header>
-`;
-
 exports[`Deve exibir a mensagem de erro 1`] = `
 <header
   className="header"
@@ -65,6 +23,7 @@ exports[`Deve exibir a mensagem de erro 1`] = `
     </label>
     <input
       className="header__field"
+      onChange={[Function]}
       onKeyDown={[Function]}
       placeholder="02050-010"
       type="text"

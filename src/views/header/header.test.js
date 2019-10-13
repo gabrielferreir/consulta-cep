@@ -23,6 +23,17 @@ it('Deve renderizar o cabeçalho', () => {
     expect(toJson(wrapper)).toMatchSnapshot();
 });
 
+it("Deve atualizar o valor do CEP", () => {
+    const updateCep = jest.fn();
+
+    const app = shallow(<Header updateCep={updateCep}/>);
+
+    const input = app.find('input');
+    input.simulate('change', { target: { value: '14402-336' } });
+
+    expect(updateCep.mock.calls.length).toBe(1)
+});
+
 it("Deve chamar a função que busca o endereço ao apertar Enter", () => {
     const cepRequest = jest.fn();
 
