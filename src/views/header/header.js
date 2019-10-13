@@ -15,7 +15,7 @@ export class Header extends React.Component {
 
                 <div className="header__wrapper-field">
                     <label className="header__label-field">CEP</label>
-                    <input type="text" placeholder="02050-010" value={cepValue}
+                    <input type="number" placeholder="02050-010" value={cepValue}
                            onChange={event => {
                                updateCep(event.target.value)
                            }}
