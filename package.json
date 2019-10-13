@@ -10,10 +10,8 @@
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-redux": "^7.1.1",
-    "react-router-dom": "^5.1.0",
     "react-scripts": "3.1.2",
     "redux": "^4.0.4",
-    "redux-form": "^8.2.6",
     "redux-thunk": "^2.3.0"
   },
   "scripts": {
@@ -22,7 +20,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "coverage": "react-scripts test --coverage .",
-    "serve": "serve build"
+    "serve": "serve build",
+    "prod": "npm install && npm run build && npm run serve"
   },
   "eslintConfig": {
     "extends": "react-app"
